@@ -1,0 +1,396 @@
+/* Dashboard.css */
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+.header {
+    overflow: hidden;
+    background-color: #ffffff;
+    padding: 40px 40px;
+    columns: 100px 2;
+}
+
+.header .logo {
+    font-size: 25px;
+    font-weight: bold;  
+}
+
+.header .company {
+    display: flex;
+}
+
+.center {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.company-logo {
+    /* display: flex; */
+    align-items: center;
+}
+
+.img-logo {
+    height: 50px;
+    margin: 10px;
+}
+
+.font-mono {
+    font-family: 'Courier New', monospace;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+.button {
+    border: none;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0px 20px;
+    border-radius: 50px;
+}
+
+.btn-primary {
+    background-color: #6f8238;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #b87045;
+    color: white;
+    margin: 0px 0px;
+}
+
+.img-rounded {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    display: inline-block;
+}
+
+.topbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #bdd47a;
+}
+
+.topbar li {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+.topbar li:last-child {
+    border-right: none;
+}
+
+.topbar li a {
+    display: block;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topbar li a:hover:not(.active) {
+    background-color: #708238;
+    color: white;
+}
+
+.opening {
+    background-color: #bdd47a;
+    color: black;
+    margin: 10px 0px;
+    padding: 10px 80px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+}
+
+.flex-item-left {
+    padding: 10px;
+    flex: 50%;
+}
+
+.flex-item-right {
+    padding: 10px;
+    flex: 50%;
+}
+
+.img-globe {
+    height: 250px;
+    margin: 0px 50px;
+    margin-top: 40px;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.content-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    /* width: 100%; */
+    position: relative;
+    display: flex;
+    margin: 40px;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 1px solid #ba7044;
+    border-right: none;
+    padding: 10px;
+    padding-left: 25px;
+    height: 20px;
+    border-radius: 100px;
+    outline: none;
+    color: #9DBFAF;
+    font-size: medium;
+}
+
+.searchTerm:focus {
+    color: #00B4CC;
+}
+
+.searchButton {
+    position: absolute;
+    right: 0px;
+    width: 40px;
+    height: 36px;
+    text-align: center;
+    color: #708238;
+    cursor: pointer;
+    font-size: 22px;
+    margin: 5px 15px;
+}
+
+.products {
+    background-color: #bdd47a;
+    color: black;
+    height: 500px;
+    margin: 0px 40px;
+    margin-top: 120px;
+    padding: 10px 80px;
+}
+
+.product-company {
+    color: black;
+    height: 400px;
+    margin: 0px 40px;
+    padding: 10px 50px;
+}
+
+.card-product {
+    background-color: white;
+    border: 1px solid #bc6f42;
+    border-radius: 60px;
+    color: black;
+    height: 420px;
+    margin: 0px 50px;
+    margin-top: -70px;
+    padding: 20px 40px;
+}
+
+.card-title {
+    font-weight: bold;
+    margin-top: 60px;
+    margin-bottom: -10px;
+}
+
+.card-subtitle {
+    font-size: small;
+    margin-top: 00px;
+}
+
+.card-detail {
+    font-size: 14pt;
+    /* list-style: none; */
+}
+
+.subject {
+    background-color: white;
+    margin: 20px;
+    color: black;
+}
+
+.material {
+    background-color: white;
+    margin: 50px;
+    color: black;
+    /* height: 300px; */
+}
+
+.material .choice {
+    background-color: #bdd47a;
+    color: black;
+    padding: 20px 50px;
+    font-size: 32pt;
+    font-weight: bold;
+    border-radius: 20px;
+    position: relative;  
+    margin: 20px 100px;
+}
+
+.material .choice .badge-right {
+    background-color: #73833a;
+    color: white;
+    padding: 10px 20px;
+    position: absolute;
+    top:0;
+    right:0;
+    text-align: center;
+    font-size: 12pt;
+    font-weight:normal;
+    border-radius: 15px;
+}
+
+.material .choice .badge-left {
+    background-color: #73833a;
+    color: white;
+    padding: 5px 20px;
+    position: absolute;
+    top:0;
+    left:0;
+    text-align: center;
+    font-size: 12pt;
+    font-weight:normal;
+    border-radius: 15px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.grid-company {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-item {
+    background-color: white;
+    border: 1px solid #708238;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 2px 2px 4px#708238;
+}
+
+.grid-card {
+    background-color: #bdd47a;
+    color: black;
+    border-radius: 60px; 
+    height: 250px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.grid-detail {
+    font-size: 14pt;
+    margin-top: 30px;
+    color: black;
+    text-align: left;
+}
+
+.active, .grid-item:hover {
+    background-color: #708238;
+    color: white;
+}
+
+.footer {
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #708238;
+    height: 200px;
+}
+
+.sosmed {
+    padding: 40px;
+}
+
+.sosmed .title {
+    font-size: 32pt;
+    font-weight: bold;
+    color: white;
+    margin: 0px;
+}
+
+.sosmed .icon {
+    height: 30px;
+    margin: 30px 10px;
+}
+
+.copyright {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #3b4717;
+    color: white;
+    text-align: left;
+    padding: 5px;
+}
+
+.p24 {
+    padding: 20px 40px;
+}
+
+.pt-4 {
+    padding-top: 40px;
+}
+
+.pl-5 {
+    padding-left: 50px;
+}
+
+.mt-4 {
+    margin-top: 40px;
+}
+
+.mb-4 {
+    margin-bottom: 40px;
+}
+
+.ml-7 {
+    margin-left: 70px;
+}
+
