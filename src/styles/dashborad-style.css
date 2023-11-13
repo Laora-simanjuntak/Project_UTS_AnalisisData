@@ -5,9 +5,34 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.col-4 {
+    float: left;
+    width: 40%;
+}
+
+.col-8 {
+    float: left;
+    width: 60%;
+}
+
 .dashboard-container {
     display: flex;
     height: 100vh;
+}
+
+.profile-container {
+    margin: 40px 80px;
 }
 
 .header {
@@ -19,7 +44,7 @@ body {
 
 .header .logo {
     font-size: 25px;
-    font-weight: bold;  
+    font-weight: bold;
 }
 
 .header .company {
@@ -28,12 +53,13 @@ body {
 
 .center {
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
 }
 
-.company-logo {
-    /* display: flex; */
+.img-center {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -42,8 +68,25 @@ body {
     margin: 10px;
 }
 
+.img-profile {
+    height: 150px;
+}
+
+.company-logo {
+    /* display: flex; */
+    align-items: center;
+}
+
 .font-mono {
     font-family: 'Courier New', monospace;
+}
+
+.font-white {
+    color: white;
+}
+
+.margin-0 {
+    margin: 0px;
 }
 
 .strong {
@@ -69,6 +112,14 @@ button {
 .btn-primary {
     background-color: #6f8238;
     color: white;
+}
+
+.btn-secondary {
+    background-color: #708238;
+    color: white;
+    font-weight: bold;
+    padding: 14px 40px;
+    margin-left: -20px;
 }
 
 .btn-danger {
@@ -242,6 +293,12 @@ button {
     /* list-style: none; */
 }
 
+.card-profile {
+    background-color: #bdd47a;
+    margin: 10px 50px -40px 50px;
+    padding: 40px;
+}
+
 .subject {
     background-color: white;
     margin: 20px;
@@ -262,7 +319,7 @@ button {
     font-size: 32pt;
     font-weight: bold;
     border-radius: 20px;
-    position: relative;  
+    position: relative;
     margin: 20px 100px;
 }
 
@@ -271,11 +328,11 @@ button {
     color: white;
     padding: 10px 20px;
     position: absolute;
-    top:0;
-    right:0;
+    top: 0;
+    right: 0;
     text-align: center;
     font-size: 12pt;
-    font-weight:normal;
+    font-weight: normal;
     border-radius: 15px;
 }
 
@@ -284,11 +341,11 @@ button {
     color: white;
     padding: 5px 20px;
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     text-align: center;
     font-size: 12pt;
-    font-weight:normal;
+    font-weight: normal;
     border-radius: 15px;
 }
 
@@ -316,7 +373,7 @@ button {
 .grid-card {
     background-color: #bdd47a;
     color: black;
-    border-radius: 60px; 
+    border-radius: 60px;
     height: 250px;
     margin: 20px;
     padding: 20px;
@@ -329,7 +386,8 @@ button {
     text-align: left;
 }
 
-.active, .grid-item:hover {
+.active,
+.grid-item:hover {
     background-color: #708238;
     color: white;
 }
@@ -370,6 +428,20 @@ button {
     padding: 5px;
 }
 
+.form-group {
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    margin-top: 1opx;
+    font-size: 14pt;
+}
+
 .p24 {
     padding: 20px 40px;
 }
@@ -380,6 +452,14 @@ button {
 
 .pl-5 {
     padding-left: 50px;
+}
+
+.margin-4 {
+    margin: 40px;
+}
+
+.m44 {
+    margin: 40px 0px;
 }
 
 .mt-4 {
@@ -393,4 +473,3 @@ button {
 .ml-7 {
     margin-left: 70px;
 }
-

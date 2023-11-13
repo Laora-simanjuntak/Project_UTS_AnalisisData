@@ -7,6 +7,7 @@ import NotFound from "./components/NotFound";
 import Login from './components/Login';
 import Company from './components/Company';
 import Kimia from './components/Kimia';
+import ProfileUser from "./components/ProfileUser";
 
 function App() {
   return (
@@ -16,10 +17,10 @@ function App() {
         <Route path="/home" element={<Home />}></Route>
         <Route path="/materi" element={<Materi />}></Route>
         <Route path="/kimia" element={<Kimia />}></Route>
+        <Route path="/profile" element={<ProfileUser />}></Route>
       </Route>
       <Route path="*" element={<NotFound />}></Route>
       <Route path="/login" element={<Login />}></Route>
-      
     </Routes>
   );
 }
