@@ -11,19 +11,29 @@
 }
 
 input {
-    width: 100%;
+    width: 80%;
     padding: 10px;
+    margin-bottom: 10px;
 }
 .pass{
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
-.Button{
-    margin-top: 20px;
-    float: right;
+.button {
+    border: none;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0px 20px;
+    border-radius: 50px;
 }
 
-.buatakun{
-    display: block;
-    margin-top: 90px;
+.btn-login{
+    background-color: #708238;
+    color: white;
+    font-weight: bold;
+    padding: 14px 40px;
+    margin-left: -20px;
 }

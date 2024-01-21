@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 
 function Login() {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loginStatus, setLoginStatus] = useState("");
@@ -25,7 +26,7 @@ function Login() {
 
     return (
         <div className="login-container">
-            <h1>LOGIN</h1>
+            <h1>Login</h1>
             <p>
                 <h1 style={{ color: 'red', fontSize: "15px", textAlign: 'center', marginTop: '20px' }}>{loginStatus}</h1>
             </p>
@@ -46,16 +47,14 @@ function Login() {
                     required
                 />
             </div>
-            <div>
+            <div className='Button'>
                 <Link to="/home">
-                    <button type="button" class="button btn-primary" onClick={handleLogin}>Login</button>
+                    <button type="button" class="btn btn-login" onClick={handleLogin}>Login</button>
                 </Link>
             </div>
-            <div>
-                <p style={{ fontSize: "10px" }}>
-                    Belum Punya Akun?
-                    <Link to="/register"> Buat Akun</Link>
-                </p>
+            <div className='buatakun'>
+                <p>Belum Punya Akun?</p>
+                <button type="button" class="btn btn-primary">Buat Akun</button>
             </div>
         </div>
     );
