@@ -1,100 +1,77 @@
-const db = require("../database/db");
+const user_models = require("../models/user_models");
 
 // create
-const insert = (req, res) => {
-    const user = req.body;
-    const query = "INSERT INTO users SET ?";
+const insert = async (req, res) => {
+    const { name, email, password, address} = req.body;
+    const user = await user_models.insertUser(name, email, password, address);
 
-    db.query(query, user, (err, result) => {
-        if(err) {
-            res.status(400).json({
-                message: "insert user gagal",
-                serverMessage: err
-            });
-        } else {
-            res.status(201).json({
-                message: "insert user berhasil"
-            });
-        }
+    res.status(200).json({
+        message: "get users berhasil",
+        user: user
     });
 }
 
 // get
-const getAll = (req, res) => {
-    const query = "SELECT * FROM users";
-    db.query(query, [], (err, result) => {
-        if(err) {
-            res.status(400).json({
-                message: "get users gagal",
-                serverMessage: err
-            });
-        } else {
-            res.status(200).json({
-                message: "get users berhasil",
-                users: result
-            });
-        }
-    })
+const getAll = async (req, res) => {
+    const users = await user_models.getUsers();
+
+    res.status(200).json({
+        message: "get users berhasil",
+        users: users
+    });
 }
 
-const getOne = (req, res) => {
+const getOne = async (req, res) => {
     console.log(req.params);
     const id = req.params.id;
-    const query = "SELECT name, email, address FROM users WHERE users.id=?";
 
-    db.query(query, id, (err, result) => {
-        if(err) {
-            res.status(400).json({
-                message: "get user gagal",
-                serverMessage: err
-            });
-        } else {
-            res.status(200).json({
-                message: "get user berhasil",
-                users: result[0]
-            })
-        }
-    });
+    const user = await user_models.getUserById(id);
+
+    if(user == null) {
+        res.status(404).json({
+            message: "user tidak ditemukan"
+        });
+    } else {
+        res.status(200).json({
+            message: "get user berhasil",
+            user: user
+        });
+    }
 }
 
 // update
-const update = (req, res) => {
+const update = async (req, res) => {
     const id = req.params.id;
-    const users = req.body;
-    const query =  `UPDATE users SET ? WHERE id=${id}`;
+    const {name, email, password, address} = req.body;
+    const user = await user_models.updateUser(id, name, email, password, address);
 
-    db.query(query, users, (err, result) => {
-        if(err) {
-            res.status(400).json({
-                message: "update users gagal",
-                serverMessage: err
-            });
-        } else {
-            res.status(200).json({
-                message: "update users berhasil",
-                users: users
-            });
-        }
-    });
+    if(user == null) {
+        res.status(404).json({
+            message: "user tidak ditemukan"
+        });
+    } else {
+        res.status(200).json({
+            message: "get user berhasil",
+            user: user
+        });
+    }
 }
 
 // delete
-const remove = (req, res) => {
+const remove = async (req, res) => {
     const id = req.params.id;
-    const query = "DELETE FROM users WHERE id = ?";
+    const user = await user_models.removeUser(id);
 
-    db.query(query, [id], (err, result) => {
-        if(err) {
-            res.status(400).json({
-                message: "delete users gagal",
-                serverMessage: err
-            });
-        } else {
-            res.status(200).json({
-                message: "delete users berhasil",
-            });
-        }
-    });
+    if(user == null) {
+        res.status(404).json({
+            message: "user tidak ditemukan"
+        });
+    } else {
+        res.status(200).json({
+            message: "delete user berhasil",
+            user: user
+        });
+    }
 }
 
 module.exports = {

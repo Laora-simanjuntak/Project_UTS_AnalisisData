@@ -4,7 +4,14 @@ const jwt = require("jsonwebtoken");
 async function login (req, res) {
     try {
         const  { id } = req.body;
-        const result = await userModel.userDetailById(id);
+        console.log(req.body);
+        if(id == null) {
+            res.json({
+                message: "ID is riquired"
+            });
+            return;
+        }
+        const result = await userModel.getUserById(id);
 
         if(result.length <= 0) {
             res.json({
