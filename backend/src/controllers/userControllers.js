@@ -1,9 +1,13 @@
 const user_models = require("../models/user_models");
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 
 // create
 const insert = async (req, res) => {
     const { name, email, password, address} = req.body;
-    const user = await user_models.insertUser(name, email, password, address);
+    const passwordHash = await bcrypt.hash(password, saltRounds);
+
+    const user = await user_models.insertUser(name, email, passwordHash, address);
 
     res.status(200).json({
         message: "get users berhasil",

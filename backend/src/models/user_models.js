@@ -22,6 +22,16 @@ async function getUserById(id) {
     }
 }
 
+async function getUserByEmail(email) {
+    try {
+        const [result] = await connection.execute("SELECT * FROM users WHERE email=?", [email]);
+        if(result.length == 0) return null;
+        return result[0];
+    } catch (error) {
+        throw error;
+    }
+}
+
 async function updateUser(id, name, email, password, address) {
     try {
         const [result] = await connection.execute("UPDATE users SET name=?, email=?, password=?, address=? WHERE id=?",
@@ -44,6 +54,7 @@ async function removeUser(id) {
 module.exports = {
     getUsers,
     getUserById,
+    getUserByEmail,
     insertUser,
     updateUser,
     removeUser
