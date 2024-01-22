@@ -14,7 +14,7 @@ function Login() {
 
     const handleRegister = (e) => {
         e.preventDefault();
-        Axios.post("http://localhost:3001/web/auth/signup", {
+        Axios.post("http://localhost:3001/web/users", {
             name: name,
             email: email,
             password: password,
