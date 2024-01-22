@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import Axios from "axios";
 import '../styles/login-style.css';
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loginStatus, setLoginStatus] = useState("");
+
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -15,20 +16,18 @@ function Login() {
             email: email,
             password: password
         }).then((response) => {
-            if(response.data.message) {
-                setLoginStatus(response.data.message);
+            if(response.data.token) {
+                navigate("/home");
             }else{
-                setLoginStatus(response.data[0].email);
+                setLoginStatus(response.data.message);
             }
         });
     };
 
     return (
         <div className="login-container">
-            <h1>LOGIN</h1>
-            <p>
-                <h1 style={{ color: 'red', fontSize: "15px", textAlign: 'center', marginTop: '20px' }}>{loginStatus}</h1>
-            </p>
+            <h2 style={{ margin: "40px 0px 70px 0px" }}>LOGIN</h2>
+            <p style={{ color: 'red', fontSize: "15px", textAlign: 'center', marginTop: '20px' }}>{loginStatus}</p>
             <div className='input'>
                 <input
                     type="text"
@@ -46,11 +45,7 @@ function Login() {
                     required
                 />
             </div>
-            <div>
-                <Link to="/home">
-                    <button type="button" class="button btn-primary" onClick={handleLogin}>Login</button>
-                </Link>
-            </div>
+            <button type="button" class="button btn-primary" onClick={handleLogin}>Login</button>
             <div>
                 <p style={{ fontSize: "10px" }}>
                     Belum Punya Akun?

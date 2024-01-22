@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Materi from "./components/Materi";
 import NotFound from "./components/NotFound";
 import Login from './components/Login';
+import Register from './components/Register';
 import Company from './components/Company';
 import Kimia from './components/Kimia';
 import ProfileUser from "./components/ProfileUser";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/profile" element={<ProfileUser />}></Route>
       </Route>
       <Route path="/login" element={<Login />}></Route>
+      <Route path="/register" element={<Register />}></Route>
       <Route path="*" element={<NotFound />}></Route>
     </Routes>
   );
