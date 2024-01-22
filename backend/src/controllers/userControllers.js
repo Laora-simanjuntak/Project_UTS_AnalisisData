@@ -47,7 +47,9 @@ const getOne = async (req, res) => {
 const update = async (req, res) => {
     const id = req.params.id;
     const {name, email, password, address} = req.body;
-    const user = await user_models.updateUser(id, name, email, password, address);
+    const passwordHash = await bcrypt.hash(password, saltRounds);
+
+    const user = await user_models.updateUser(id, name, email, passwordHash, address);
 
     if(user == null) {
         res.status(404).json({
